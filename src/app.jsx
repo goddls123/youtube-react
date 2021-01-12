@@ -7,32 +7,35 @@ import Videolist from './components/videolist';
 
 class App extends Component{
 
+  youtube = this.props.youtube;
   state = {
     videos : [],
   }
 
   componentDidMount(){
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-    
-    fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyBOU1xCTfmCO_WN4B2VNTa5PeowpHCFrxU", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          videos: result.items,
-        })
-        
-      })
+    this.youtube.mostPopular()
+      .then(videos =>  this.setState({videos}))
       .catch(error => console.log('error', error));
+
+  }
+
+  handleSearch=(query)=>{
+      this.youtube.search(query)
+      .then(result => {
+       this.setState({videos: result})
+       })
+      .catch(error => console.log('error', error));
+
   }
 
   render(){
-   
+
     return (
+   
       <div>
-        <Navbar />
+        <Navbar 
+          onSearch={this.handleSearch}
+        />
         <Videolist 
           videos = {this.state.videos}
         />

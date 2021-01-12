@@ -5,7 +5,8 @@ class earch extends Component {
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        const name = this.inputRef.current.value;
+        const search = this.inputRef.current.value;
+        this.props.onSearch(search);
         this.inputRef.current.value ='';
     }
 
@@ -21,7 +22,7 @@ class earch extends Component {
                     />
                     {/* <i className="far fa-keyboard"></i> */}
                 </Fragment>
-                <button className="searchBtn"><i class="fas fa-search"></i></button>
+                <button className="searchBtn"><i className="fas fa-search"></i></button>
            </form>
         );
     }

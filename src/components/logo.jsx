@@ -9,9 +9,9 @@ class Logo extends Component {
                 <button className = "ham_bar">
                    <i className="fas fa-bars"></i>
                 </button>
-                <a href="#" className="logo">
+                <a href="http://localhost:3000/" className="logo">
                     <i className="fab fa-youtube"></i>
-                 <span className="text">YouTube</span>
+                 <h1 className="text">YouTube</h1>
                 </a>
         </div>
         );

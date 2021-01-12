@@ -26,6 +26,9 @@
   display: flex;
   align-items: center;
 }
+.logo_area .text {
+  font-size: 1.5rem;
+}
 .fa-youtube {
   color: var(--red-color);
   font-size: 1.875rem;

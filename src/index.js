@@ -4,10 +4,14 @@ import './index.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import '@fortawesome/fontawesome-free/js/all.js';
+import Youtube from './components/service/youtube';
+
+const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_API_KEY);
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App youtube={youtube}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

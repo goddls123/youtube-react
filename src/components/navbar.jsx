@@ -11,7 +11,9 @@ class Navbar extends Component {
         return (
             <div className = "navbar">
                 <Logo />
-                <Search />
+                <Search 
+                    onSearch={this.props.onSearch}
+                />
                 <NavBtn />          
             </div>
         );

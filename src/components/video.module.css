@@ -1,13 +1,26 @@
 .videoList {
   display: flex;
+
+  background-color: var(--background-color);
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 var(--font-large);
+  padding: 0.875rem 0.875rem;
 }
 
-img {
-  width: 240px;
-  height: 120px;
+.video {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.container {
+  display: flex;
+  width: 320px;
+}
+
+.thumbnail {
+  width: 320px;
+  height: 180px;
 }
 
 .title,
@@ -16,17 +29,12 @@ img {
 }
 
 .title {
-  /* width: 320px; */
+  width: 100%;
   color: red;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  white-space: pre-wrap;
   text-overflow: ellipsis;
-}
-
-video {
-  width: 320px;
-  diplay: block;
-  /* overflow: hidden; */
 }
