@@ -11,6 +11,7 @@ class Videolist extends Component {
                     <Video 
                         video={video}
                         key={video.id}
+                        youtube={this.props.youtube}
                     />
                 )}
 

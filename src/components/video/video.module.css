@@ -11,6 +11,7 @@
   width: 100%;
   display: flex;
   flex-flow: column;
+  cursor: pointer;
 }
 
 .container {
@@ -21,6 +22,13 @@
 .thumbnail {
   width: 320px;
   height: 180px;
+}
+
+.channelImg img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin: 0 var(--padding);
 }
 
 .title,

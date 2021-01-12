@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import styles from './video.module.css'
 
 class Video extends Component {
+
     render() {
         const video = this.props.video;
         const thumbnails = this.props.video.snippet.thumbnails;
+        const channel = this.props.youtube.getChannel(video.snippet.channelId);
         return (
             <li className= {styles.container}>
                 <div className={styles.video}>
                     <img className={styles.thumbnail} src={thumbnails.medium.url} ></img>
                     <div className={styles.infoBox} >
-                        <div className={styles.channelImg}></div>
+                        <div className={styles.channelImg}>
+                            {/* <img src={channel.thumbnails.url} alt="channel img"/> */}
+                        </div>
                         <div className={styles.info}>
                             <p className={styles.title}>{video.snippet.title}</p>
                             <p className={styles.channelTitle}>{video.snippet.channelTitle}</p>

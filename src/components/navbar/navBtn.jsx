@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import idImg from './img/id_img.jpg'
+import idImg from '../img/id_img.jpg'
 class NavBtn extends Component {
     render() {
         return (
