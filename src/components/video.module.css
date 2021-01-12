@@ -1,0 +1,32 @@
+.videoList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 var(--font-large);
+}
+
+img {
+  width: 240px;
+  height: 120px;
+}
+
+.title,
+.channelTitle {
+  font-size: var(--font-small);
+}
+
+.title {
+  /* width: 320px; */
+  color: red;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+video {
+  width: 320px;
+  diplay: block;
+  /* overflow: hidden; */
+}
