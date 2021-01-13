@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  background-color: var(--background-color);
+}
+
+.videoList {
+  flex: 1 1 30%;
+}
+
+.videoDetails {
+  flex: 1 1 70%;
+}

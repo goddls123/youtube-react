@@ -1,8 +1,9 @@
 
-import './app.css';
+import styles from'./app.module.css';
 import React, { Component } from 'react';
 import Navbar from './components/navbar/navbar';
 import Videolist from './components/video/videolist';
+import VideoDetail from './components/video/video_detail/videoDetail';
 
 
 class App extends Component{
@@ -10,6 +11,8 @@ class App extends Component{
   youtube = this.props.youtube;
   state = {
     videos : [],
+    selectedVideo: '',
+    selectedChannels: {},
   }
 
   componentDidMount(){
@@ -21,13 +24,28 @@ class App extends Component{
 
   handleSearch=(query)=>{
       this.youtube.search(query)
-      .then(videos => this.setState({videos}))
+      .then(videos => this.setState({
+          videos : videos,
+          selectedVideo : null,
+        }))
       .catch(error => console.log('error', error));
-
   }
 
+  handleVideoClick = (video, channels) =>{
+
+    this.youtube.relatedVideo(video.id)
+    .then(videos => this.setState({
+      videos: videos,
+      selectedVideo: video,
+      selectedChannels: channels,
+    }))
+    .catch(error => console.log('error', error));
+
+}
+
   render(){
-    console.log(this.state.videos);
+
+    
 
     return (
    
@@ -35,10 +53,24 @@ class App extends Component{
         <Navbar 
           onSearch={this.handleSearch}
         />
-        <Videolist 
-          videos = {this.state.videos}
-          youtube={this.youtube}
-        />
+        <section className={styles.content}>
+          { this.state.selectedVideo&& (
+            <div className={styles.videoDetails}>
+              <VideoDetail 
+                  video ={this.state.selectedVideo}
+                  channels ={this.state.selectedChannels}       
+              />
+            </div>
+          )}
+          <div className={styles.videoList}>
+            <Videolist 
+              videos = {this.state.videos}
+              youtube={this.youtube}
+              onVideoClick ={this.handleVideoClick}
+              selected ={this.state.selectedVideo ? true : false}
+            />
+          </div>
+        </section>
       </div>
     );
   }

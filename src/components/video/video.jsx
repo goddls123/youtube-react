@@ -3,23 +3,46 @@ import styles from './video.module.css'
 
 class Video extends Component {
 
+    state={
+        channelsThumbnails: {},
+        channels:{},
+    }
+
+    componentDidMount(){
+        if(!this.props.selected){
+            this.props.youtube.getChannel(this.props.video.snippet.channelId)
+            .then(channels =>  this.setState({
+                channelsThumbnails : channels[0].snippet.thumbnails.medium,
+                channels: channels,
+                }))
+            .catch(error => console.log('error', error));
+        }
+         
+      }
+
+    handleVideoClick = () =>{
+        this.props.onVideoClick(this.props.video,this.state.channels);
+    }
+  
     render() {
         const video = this.props.video;
         const thumbnails = this.props.video.snippet.thumbnails;
-        const channel = this.props.youtube.getChannel(video.snippet.channelId);
+        const channelImg = this.props.selected ? 0 : this.state.channelsThumbnails;
+        const displayType = this.props.seleted ? 'list' : 'gird';
+       
         return (
-            <li className= {styles.container}>
+            <li className= {`${styles.container} ${styles.displayType}`} onClick={this.handleVideoClick}>
                 <div className={styles.video}>
-                    <img className={styles.thumbnail} src={thumbnails.medium.url} ></img>
-                    <div className={styles.infoBox} >
-                        <div className={styles.channelImg}>
-                            {/* <img src={channel.thumbnails.url} alt="channel img"/> */}
-                        </div>
+                    <img className={styles.thumbnail} src={thumbnails.medium.url} alt="thumbnail" ></img>
+                    <div className={`${styles.infoBox} ${styles.displayType}`} >
+                        <a href="#" className={`${styles.channelImg} ${styles.displayType}`}>
+                            <img src={channelImg.url} alt="channel img"/>
+                        </a>
                         <div className={styles.info}>
-                            <p className={styles.title}>{video.snippet.title}</p>
-                            <p className={styles.channelTitle}>{video.snippet.channelTitle}</p>
+                            <h3 className={styles.title}>{video.snippet.title}</h3>
+                            <a href="#" className={styles.channelTitle}>{video.snippet.channelTitle}</a>
                             <div className={styles.meta}>
-                                <span className={styles.count}></span>
+                                <span className={styles.count}>조회수</span>
                                 <span className={styles.date}></span>
                             </div>
                         </div>

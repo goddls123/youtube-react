@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import styles from './navbar.module.css';
 
 class earch extends Component {
     inputRef = React.createRef();
@@ -13,7 +14,7 @@ class earch extends Component {
 
     render() {
         return (
-           <form action="" className="search" onSubmit={this.handleSubmit}>
+           <form action="" className={styles.search} onSubmit={this.handleSubmit}>
                 <Fragment>
                     <input 
                         type="text" 
@@ -22,7 +23,7 @@ class earch extends Component {
                     />
                     {/* <i className="far fa-keyboard"></i> */}
                 </Fragment>
-                <button className="searchBtn"><i className="fas fa-search"></i></button>
+                <button className={styles.searchBtn}><i className={styles.fa_search}></i></button>
            </form>
         );
     }

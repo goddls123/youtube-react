@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import styles from './navbar.module.css';
 
 class Logo extends Component {
 
 
     render() {
         return (
-            <div className="logo_area">
-                <button className = "ham_bar">
-                   <i className="fas fa-bars"></i>
+            <div className={styles.logo_area}>
+                <button className = {styles.ham_bar}>
+                   <i className={styles.fa_bars}></i>
                 </button>
-                <a href="http://localhost:3000/" className="logo">
-                    <i className="fab fa-youtube"></i>
-                 <h1 className="text">YouTube</h1>
+                <a href="http://localhost:3000/" className={styles.logo}>
+                    <i className={styles.fa_youtube}></i>
+                 <h1 className={styles.text}>YouTube</h1>
                 </a>
         </div>
         );

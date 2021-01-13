@@ -1,7 +1,5 @@
 .videoList {
   display: flex;
-
-  background-color: var(--background-color);
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0.875rem 0.875rem;
@@ -12,11 +10,15 @@
   display: flex;
   flex-flow: column;
   cursor: pointer;
+  max-width: 320px;
 }
 
 .container {
   display: flex;
-  width: 320px;
+  /* width: calc(100% / var(--items-per-row) - var(--items-margin));
+  margin-left: calc(var(--items-margin) / 2);
+  margin-bottom: calc(var(--items-margin) / 2);
+  margin-right: calc(var(--items-margin) / 2); */
 }
 
 .thumbnail {
@@ -24,11 +26,13 @@
   height: 180px;
 }
 
-.channelImg img {
+.channelImg.grid img {
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 50%;
-  margin: 0 var(--padding);
+}
+.channelImg.list {
+  display: none;
 }
 
 .title,
@@ -45,4 +49,27 @@
   overflow: hidden;
   white-space: pre-wrap;
   text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+.channelTitle {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 0.5rem;
+}
+.infoBox {
+  display: flex;
+}
+
+.channelImg {
+  margin: 0.75rem 0.75rem 0 0;
+}
+
+.info {
+  padding-right: 1.5rem;
+  display: flex;
+  flex-flow: column;
+}
+.meta {
+  margin-top: 0.125rem;
+  font-size: 0.5rem;
 }

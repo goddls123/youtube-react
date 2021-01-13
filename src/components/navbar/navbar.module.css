@@ -29,13 +29,13 @@
 .logo_area .text {
   font-size: 1.5rem;
 }
-.fa-youtube {
+.fa_youtube {
   color: var(--red-color);
   font-size: 1.875rem;
   background-color: var(--white-color);
 }
 
-.fa-bars {
+.fa_bars {
   color: var(--black-color);
   /* padding: var(--padding); */
   padding: 0;
@@ -74,16 +74,11 @@
   align-items: center;
 }
 
-.navBtn .fas {
-  font-size: var(--font-large);
-  color: var(--red-color);
-}
-
 @media screen and (min-width: 720px) {
   .navbar .search {
     display: flex;
   }
-  .navBtn .fa-search {
+  .navBtn .fa_search {
     display: none;
   }
 }

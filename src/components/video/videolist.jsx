@@ -7,12 +7,18 @@ class Videolist extends Component {
         const videos = this.props.videos;
         return (
             <ul className ={styles.videoList}>
-                {videos.map(video =>
-                    <Video 
-                        video={video}
-                        key={video.id}
-                        youtube={this.props.youtube}
-                    />
+                {videos.map(video =>{
+                    
+                    if(video.snippet !== undefined){
+                       return <Video 
+                            video={video}
+                            key={video.id}
+                            youtube={this.props.youtube}
+                            onVideoClick={this.props.onVideoClick}
+                            selected ={this.props.selected}
+                        />
+                    }
+                }
                 )}
 
             </ul>
