@@ -54,11 +54,34 @@ li {
   --items-margin: 1rem;
 
   /* count */
-  --items-per-row: 2;
+  --items-per-row: 1;
 
   /* font-size */
   --font-micro: 0.625rem;
   --font-small: 0.75rem;
   --font-medium: 0.875rem;
   --font-large: 1.125rem;
+}
+
+@media screen and (min-width: 22.75rem) {
+  :root {
+    --items-per-row: 2;
+  }
+}
+@media screen and (min-width: 43.75rem) {
+  :root {
+    --items-per-row: 3;
+  }
+}
+
+@media screen and (min-width: 64.75rem) {
+  :root {
+    --items-per-row: 4;
+  }
+}
+
+@media screen and (min-width: 85.75rem) {
+  :root {
+    --items-per-row: 5;
+  }
 }

@@ -1,8 +1,17 @@
 .videoList {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 0.875rem 0.875rem;
+  max-width: calc(1.75rem + var(--items-per-row) * 21rem);
+}
+
+.container {
+  display: flex;
+  width: calc(100% / var(--items-per-row) - var(--items-margin));
+  margin-left: calc(var(--items-margin) / 2);
+  margin-bottom: 2.5rem;
+  margin-right: calc(var(--items-margin) / 2);
 }
 
 .video {
@@ -13,17 +22,8 @@
   max-width: 320px;
 }
 
-.container {
-  display: flex;
-  /* width: calc(100% / var(--items-per-row) - var(--items-margin));
-  margin-left: calc(var(--items-margin) / 2);
-  margin-bottom: calc(var(--items-margin) / 2);
-  margin-right: calc(var(--items-margin) / 2); */
-}
-
 .thumbnail {
-  width: 320px;
-  height: 180px;
+  width: 100%;
 }
 
 .channelImg.grid img {

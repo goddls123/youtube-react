@@ -5,6 +5,9 @@
 
 .videoList {
   flex: 1 1 30%;
+
+  display: flex;
+  justify-content: center;
 }
 
 .videoDetails {
