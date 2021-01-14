@@ -34,7 +34,6 @@ class Video extends Component {
         else
             displayType = styles.grid;
 
-        console.log(displayType);
         return (
             <li className= {`${styles.container} ${displayType}`} onClick={this.handleVideoClick}>
                 <div className={`${styles.video} ${displayType}`}>

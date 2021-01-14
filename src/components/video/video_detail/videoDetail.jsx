@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './videoDetail.module.css';
+import InfoArea from './infoArea';
+import MetaArea from './metaArea';
 
 
 class VideoDetail extends Component {
@@ -11,11 +13,16 @@ class VideoDetail extends Component {
                 <iframe 
                     id="player"
                     type="text/html"
-                    width="100%" height="360"
+                    width="100%" height="500px"
                     src={`http://www.youtube.com/embed/${this.props.video.id}`}
                     frameBorder="0"
                     allowFullScreen
                 ></iframe>
+                <MetaArea 
+                    video={this.props.video}
+                    channels={this.props.channels}
+                />
+                {/* <InfoArea /> */}
             </div>
         );
     }

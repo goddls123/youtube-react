@@ -23,7 +23,6 @@ class Youtube{
     async relatedVideo(id){
         const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${this.number}&relatedToVideoId=${id}&type=video&key=${this.key}&order=viewCount`, this.requestOptions);
         const result = await response.json();
-        console.log(result);
         return result.items.map(item => ({...item, id:item.id.videoId}));
     }
 
