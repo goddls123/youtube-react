@@ -21,7 +21,7 @@ class Video extends Component {
       }
 
     handleVideoClick = () =>{
-        this.props.onVideoClick(this.props.video,this.state.channels);
+        this.props.onVideoClick(this.props.video);
     }
   
     render() {

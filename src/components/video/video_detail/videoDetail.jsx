@@ -9,7 +9,7 @@ class VideoDetail extends Component {
     render() {
         return (
             <div className={styles.content}>
-               
+
                 <iframe 
                     id="player"
                     type="text/html"
@@ -20,9 +20,11 @@ class VideoDetail extends Component {
                 ></iframe>
                 <MetaArea 
                     video={this.props.video}
-                    channels={this.props.channels}
                 />
-                {/* <InfoArea /> */}
+                <InfoArea 
+                    video={this.props.video}
+                    youtube={this.props.youtube}       
+                />
             </div>
         );
     }

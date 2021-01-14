@@ -12,7 +12,6 @@ class App extends Component{
   state = {
     videos : [],
     selectedVideo: '',
-    selectedChannels: {},
   }
 
   componentDidMount(){
@@ -31,13 +30,12 @@ class App extends Component{
       .catch(error => console.log('error', error));
   }
 
-  handleVideoClick = (video, channels) =>{
+  handleVideoClick = (video) =>{
 
     this.youtube.relatedVideo(video.id)
     .then(videos => this.setState({
       videos: videos,
       selectedVideo: video,
-      selectedChannels: channels,
     }))
     .catch(error => console.log('error', error));
 
@@ -58,7 +56,7 @@ class App extends Component{
             <div className={styles.videoDetails}>
               <VideoDetail 
                   video ={this.state.selectedVideo}
-                  channels ={this.state.selectedChannels}       
+                  youtube ={this.props.youtube}       
               />
             </div>
           )}
