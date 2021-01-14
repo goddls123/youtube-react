@@ -37,7 +37,7 @@ class Video extends Component {
         console.log(displayType);
         return (
             <li className= {`${styles.container} ${displayType}`} onClick={this.handleVideoClick}>
-                <div className={styles.video}>
+                <div className={`${styles.video} ${displayType}`}>
                     <img className={styles.thumbnail} src={thumbnails.medium.url} alt="thumbnail" ></img>
                     <div className={`${styles.infoBox} ${displayType}`} >
 

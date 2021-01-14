@@ -13,6 +13,9 @@
   margin-bottom: 2.5rem;
   margin-right: calc(var(--items-margin) / 2);
 }
+.container.list {
+  width: 100%;
+}
 
 .video {
   width: 100%;
@@ -20,6 +23,9 @@
   flex-flow: column;
   cursor: pointer;
   max-width: 320px;
+}
+.video.list {
+  flex-flow: row;
 }
 
 .thumbnail {
@@ -37,24 +43,23 @@
 
 .title,
 .channelTitle {
-  font-size: var(--font-small);
 }
 
 .title {
   width: 100%;
-  color: red;
+  color: var(--black-color);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   white-space: pre-wrap;
   text-overflow: ellipsis;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-medium);
+  margin: 0.75rem 0 0.5rem;
 }
 .channelTitle {
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 0.5rem;
+  font-size: var(--font-medium);
+  color: var(--grey-light-color);
 }
 .infoBox {
   display: flex;
@@ -71,5 +76,6 @@
 }
 .meta {
   margin-top: 0.125rem;
-  font-size: 0.5rem;
+  font-size: var(--font-medium);
+  color: var(--grey-light-color);
 }
