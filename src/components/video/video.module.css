@@ -15,9 +15,10 @@
 }
 .container.list {
   width: 100%;
+  margin: 0 0 0.3em;
 }
 
-.video {
+.video.grid {
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -25,13 +26,23 @@
   max-width: 320px;
 }
 .video.list {
+  display: flex;
   flex-flow: row;
+  cursor: pointer;
 }
 
 .thumbnail {
   width: 100%;
 }
+.thumbnail.list {
+  width: 10.4rem;
+  height: 5.875rem;
+  margin-right: 0.5em;
+}
 
+.infoBox.list {
+  width: 100%;
+}
 .channelImg.grid img {
   width: var(--avatar-size);
   height: var(--avatar-size);
@@ -40,13 +51,16 @@
 .channelImg.list {
   display: none;
 }
-
-.title,
-.channelTitle {
+.info {
+  padding-right: 1.5rem;
+  display: flex;
+  flex-flow: column;
+}
+.info.list {
+  width: 100%;
 }
 
 .title {
-  width: 100%;
   color: var(--black-color);
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -56,6 +70,9 @@
   text-overflow: ellipsis;
   font-size: var(--font-medium);
   margin: 0.75rem 0 0.5rem;
+}
+.title.list {
+  margin: 0 0 0.25rem;
 }
 .channelTitle {
   font-size: var(--font-medium);
@@ -69,11 +86,6 @@
   margin: 0.75rem 0.75rem 0 0;
 }
 
-.info {
-  padding-right: 1.5rem;
-  display: flex;
-  flex-flow: column;
-}
 .meta {
   margin-top: 0.125rem;
   font-size: var(--font-medium);

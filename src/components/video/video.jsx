@@ -38,14 +38,14 @@ class Video extends Component {
         return (
             <li className= {`${styles.container} ${displayType}`} onClick={this.handleVideoClick}>
                 <div className={`${styles.video} ${displayType}`}>
-                    <img className={styles.thumbnail} src={thumbnails.medium.url} alt="thumbnail" ></img>
+                    <img className={`${styles.thumbnail} ${displayType}`} src={thumbnails.medium.url} alt="thumbnail" ></img>
                     <div className={`${styles.infoBox} ${displayType}`} >
 
                         <a href="#" className={`${styles.channelImg} ${displayType}`}>
                             <img src={channelImg.url} alt="channel img"/>
                         </a>
-                        <div className={styles.info}>
-                            <h3 className={styles.title}>{video.snippet.title}</h3>
+                        <div className={`${styles.info} ${displayType}`}>
+                            <h3 className={`${styles.title} ${displayType}`}>{video.snippet.title}</h3>
                             <a href="#" className={styles.channelTitle}>{video.snippet.channelTitle}</a>
                             <div className={styles.meta}>
                                 <span className={styles.count}>조회수</span>
