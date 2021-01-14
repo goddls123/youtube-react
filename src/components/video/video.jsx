@@ -28,14 +28,20 @@ class Video extends Component {
         const video = this.props.video;
         const thumbnails = this.props.video.snippet.thumbnails;
         const channelImg = this.props.selected ? 0 : this.state.channelsThumbnails;
-        const displayType = this.props.seleted ? 'list' : 'gird';
-       
+        let displayType ;
+        if(this.props.selected)
+            displayType = styles.list;
+        else
+            displayType = styles.grid;
+
+        console.log(displayType);
         return (
-            <li className= {`${styles.container} ${styles.displayType}`} onClick={this.handleVideoClick}>
+            <li className= {`${styles.container} ${displayType}`} onClick={this.handleVideoClick}>
                 <div className={styles.video}>
                     <img className={styles.thumbnail} src={thumbnails.medium.url} alt="thumbnail" ></img>
-                    <div className={`${styles.infoBox} ${styles.displayType}`} >
-                        <a href="#" className={`${styles.channelImg} ${styles.displayType}`}>
+                    <div className={`${styles.infoBox} ${displayType}`} >
+
+                        <a href="#" className={`${styles.channelImg} ${displayType}`}>
                             <img src={channelImg.url} alt="channel img"/>
                         </a>
                         <div className={styles.info}>
