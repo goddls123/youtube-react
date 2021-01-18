@@ -26,12 +26,16 @@
   display: flex;
   align-items: center;
 }
+.youtube {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
 .logo_area .text {
   font-size: 1.5rem;
+  margin: 0;
 }
-.fa_youtube {
-  color: var(--red-color);
-  font-size: 1.875rem;
+.ham_bar {
   background-color: var(--white-color);
 }
 
@@ -59,12 +63,16 @@
   outline: none;
   border-radius: 2px;
   padding: 2px 6px;
-  flex: 1 1 auto;
   font-size: 1rem;
   background-color: #ffffff;
+  flex-basis: 1000px;
+}
+.textBox {
+  display: flex;
+  width: 100%;
 }
 .search button {
-  width: 65px;
+  flex: 0 0 65px;
   background-color: var(--btn-color);
   border: 1px solid var(--line-color);
   border-radius: 2px;
@@ -74,11 +82,31 @@
   align-items: center;
 }
 
+.item .fa-search {
+  color: red;
+}
+.svg-inlie--fa.fa-w-16 {
+  color: red;
+}
+.faSearch,
+.faVideo,
+.faTh,
+.faBell,
+.faBars {
+  color: var(--grey-dark-color);
+  font-size: 1rem;
+}
+.item {
+  padding: 12px;
+}
+.ham_bar {
+  padding: 8px;
+}
 @media screen and (min-width: 720px) {
   .navbar .search {
     display: flex;
   }
-  .navBtn .fa_search {
+  .item:first-child {
     display: none;
   }
 }

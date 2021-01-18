@@ -14,21 +14,21 @@ class App extends Component{
     selectedVideo: '',
   }
 
-  componentDidMount(){
-    this.youtube.mostPopular()
-      .then(videos =>  this.setState({videos}))
-      .catch(error => console.log('error', error));
+  // componentDidMount(){
+  //   this.youtube.mostPopular()
+  //     .then(videos =>  this.setState({videos}))
+  //     .catch(error => console.log('error', error));
      
-  }
+  // }
 
-  handleSearch=(query)=>{
-      this.youtube.search(query)
-      .then(videos => this.setState({
-          videos : videos,
-          selectedVideo : null,
-        }))
-      .catch(error => console.log('error', error));
-  }
+  // handleSearch=(query)=>{
+  //     this.youtube.search(query)
+  //     .then(videos => this.setState({
+  //         videos : videos,
+  //         selectedVideo : null,
+  //       }))
+  //     .catch(error => console.log('error', error));
+  // }
 
   handleVideoClick = (video) =>{
 
@@ -37,7 +37,7 @@ class App extends Component{
       videos: videos,
       selectedVideo: video,
     }))
-    .catch(error => console.log('error', error));
+    .catch(error => console.log('error1', error));
 
 }
 
@@ -60,14 +60,14 @@ class App extends Component{
               />
             </div>
           )}
-          <div className={styles.videoList}>
+          {/* <div className={styles.videoList}>
             <Videolist 
               videos = {this.state.videos}
               youtube={this.youtube}
               onVideoClick ={this.handleVideoClick}
               selected ={this.state.selectedVideo ? true : false}
             />
-          </div>
+          </div> */}
         </section>
       </div>
     );

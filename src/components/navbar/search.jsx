@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import styles from './navbar.module.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
-class earch extends Component {
+class Search extends Component {
     inputRef = React.createRef();
 
     handleSubmit = (e)=>{
@@ -15,18 +17,16 @@ class earch extends Component {
     render() {
         return (
            <form action="" className={styles.search} onSubmit={this.handleSubmit}>
-                <Fragment>
+               <span className={styles.textBox}></span>
                     <input 
                         type="text" 
-                        placeholder="검색"
+                        placeholder="검색..."
                         ref={this.inputRef}
                     />
-                    {/* <i className="far fa-keyboard"></i> */}
-                </Fragment>
-                <button className={styles.searchBtn}><i className={styles.fa_search}></i></button>
+                <button className={styles.searchBtn}><FontAwesomeIcon className={styles.faSearch} icon={faSearch} size="1x" /></button>
            </form>
         );
     }
 }
 
-export default earch;
+export default Search;

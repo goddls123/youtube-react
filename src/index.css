@@ -85,3 +85,10 @@ li {
     --items-per-row: 5;
   }
 }
+
+.item .fa-search {
+  color: red;
+}
+.svg-inlie--fa.fa-w-16 {
+  color: red;
+}

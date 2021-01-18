@@ -7,8 +7,11 @@ class InfoArea extends Component {
     state={
         channelsThumbnails: {},
         channels:{},
-        btnState: true,
-        dataType: null,
+        subBtnState: true,
+        subDataType: null,
+        moreBtnState:true,
+        moreDataType:null,
+   
     }
 
     componentDidUpdate(){
@@ -29,25 +32,41 @@ class InfoArea extends Component {
     }
     
     handleSubscribe =() =>{
-        if(this.state.btnState){
+        if(this.state.subBtnState){
             this.setState({
-                btnState:false,
-                dataType: styles.active,
+                subBtnState:false,
+                subDataType: styles.active,
             });
         }
         else{
             this.setState({
-                btnState:true,
-                dataType: null,
+                subBtnState:true,
+                subDataType: null,
             });
         }
     }
     
+    handleMoreInfo =() =>{
+        if(this.state.moreBtnState){
+            this.setState({
+                moreBtnState:false,
+                moreDataType: styles.active,
+            });
+        }
+        else{
+            this.setState({
+                moreBtnState:true,
+                moreDataType: null,
+            });
+        }
+    }
+
 
 
     render() {
         const snippet = this.props.video.snippet;
-
+       
+        
 
         
         return (
@@ -63,15 +82,15 @@ class InfoArea extends Component {
                         </span>
                         </div>
                     <div className={styles.subscribe_box}>
-                        <button className={`${styles.subscribeBtn} ${this.state.dataType}`} onClick={this.handleSubscribe}>구독</button>
-                        <button className={`${styles.ico_bell} ${this.state.dataType}`}><i className="far fa-bell"></i></button>
+                        <button className={`${styles.subscribeBtn} ${this.state.subDataType}`} onClick={this.handleSubscribe}>구독</button>
+                        <button className={`${styles.ico_bell} ${this.state.subDataType}`}><i className="far fa-bell"></i></button>
                     </div>
                 </div>
                 <div className={styles.info_text}>
-                    <pre className={styles.detail}>
+                    <pre className={`${styles.detail} ${this.state.moreDataType}`}>
                         {snippet.description}
                     </pre>
-                    <button className={styles.moreBtn}>더보기</button>
+                    <button className={`${styles.moreBtn} ${this.state.moreDataType}`} onClick={this.handleMoreInfo}>더보기</button>
                 </div>
             </section>
         );

@@ -151,15 +151,19 @@
 }
 
 .detail {
-  /* display: -webkit-box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical; */
+  overflow: hidden;
+}
+.detail.active {
+  display: block;
 }
 
 .info_area .moreBtn {
   margin-top: 12px;
-  color: var(--grey-light-color);
   font-size: var(--font-medium);
+  background-color: var(--background-color);
 }
 
 .info_area .moreBtn.active {
