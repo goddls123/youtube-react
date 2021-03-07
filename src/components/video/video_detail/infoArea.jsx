@@ -73,11 +73,11 @@ class InfoArea extends Component {
             <section className={styles.info_area}>
                 <div className={styles.channel_area}>
                     <div className={styles.channel_box}>
-                        <a href="#" className={styles.channel_img}>
+                        <button className={styles.channel_img}>
                             <img src={this.state.channelsThumbnails.url} alt="channel_img"/>
-                        </a>
+                        </button>
                         <span className = {styles.channel_info}>
-                            <a className={styles.channel_name}>{snippet.channelTitle}</a>
+                            <button className={styles.channel_name}>{snippet.channelTitle}</button>
                             <div className={styles.channel_count}>구독자 <span className={styles.num}></span>명</div>
                         </span>
                         </div>

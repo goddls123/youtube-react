@@ -1,7 +1,7 @@
 class Youtube{
     constructor(key ){
         this.key = key;
-        this.number = 10;
+        this.number = 20;
         this.requestionOptions = {
             method: 'GET',
             redirect: 'follow'

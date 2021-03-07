@@ -18,7 +18,6 @@ class MetaArea extends Component {
             point += 3; 
         } 
          
-        return str;
      
     }
     

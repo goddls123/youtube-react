@@ -96,12 +96,12 @@ class Video extends Component {
                     <img className={`${styles.thumbnail} ${displayType}`} src={thumbnails.medium.url} alt="thumbnail" ></img>
                     <div className={`${styles.infoBox} ${displayType}`} >
 
-                        <a href="#" className={`${styles.channelImg} ${displayType}`}>
+                        <a className={`${styles.channelImg} ${displayType}`}>
                             <img src={channelImg.url} alt="channel img"/>
                         </a>
                         <div className={`${styles.info} ${displayType}`}>
                             <h3 className={`${styles.title} ${displayType}`}>{video.snippet.title}</h3>
-                            <a href="#" className={styles.channelTitle}>{video.snippet.channelTitle}</a>
+                            <a className={styles.channelTitle}>{video.snippet.channelTitle}</a>
                             <div className={styles.meta}>
                                 <span className={styles.count}>조회수 {viewCount}</span>
                                 <span className={styles.date}>{time}</span>
