@@ -1,0 +1,20 @@
+.content {
+  display: flex;
+  background-color: var(--background-color);
+}
+
+.videoList {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.videoDetails {
+  flex: 1 1 70%;
+}
+
+@media screen and (max-width: 1020px) {
+  .content {
+    flex-flow: column;
+  }
+}
