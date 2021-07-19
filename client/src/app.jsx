@@ -6,8 +6,6 @@ import Videolist from './components/video/videolist';
 import VideoDetail from './components/video/video_detail/videoDetail';
 
 
-
-
 const App = (props) => {
   const youtube = props.youtube;
   const [videos , setVideos] = useState([]);
@@ -38,7 +36,6 @@ const App = (props) => {
     .catch(error => console.log('error1', error));
 
   }
-
   
     return (
       <div>
